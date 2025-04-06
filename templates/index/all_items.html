@@ -1,0 +1,95 @@
+{% extends "base/base.html" %} {% load static %} {% block body %} 
+
+
+{% if platinum %}
+<section class="shop_section layout_padding">
+	<div class="container">
+		<div class="heading_container heading_center">
+			<h2>Platinum</h2>
+		</div>
+		<div class="row">
+			{% for product in platinum %} 
+			{% if forloop.counter < 9 %}
+			{% include "section/card.html" %}
+			{% endif %}
+			{% endfor %}
+		</div>
+		<div class="btn-box">
+			<a href="{% url 'home:category'  category='platinum'%}"> View Platinum Ornaments </a>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+{% if gold %}
+<section class="shop_section layout_padding">
+	<div class="container">
+		<div class="heading_container heading_center">
+			<h2>Gold</h2>
+		</div>
+		<div class="row">
+			{% for product in gold %} 
+			{% if forloop.counter < 9 %}
+			{% include "section/card.html" %}
+			{% endif %}
+			{% endfor %}
+		</div>
+		<div class="btn-box">
+			<a href="{% url 'home:category' category='gold' %}"> View Gold Ornaments </a>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+{% if silver %}
+<section class="shop_section layout_padding">
+	<div class="container">
+		<div class="heading_container heading_center">
+			<h2>Silver</h2>
+		</div>
+		<div class="row">
+			{% for product in silver %} 
+			{% if forloop.counter < 9 %}
+			{% include "section/card.html" %}
+			{% endif %}
+			{% endfor %}
+		</div>
+		<div class="btn-box">
+			<a href="{% url 'home:category' category='silver' %}"> View Silver Ornaments </a>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+
+{% if diamond %}
+<section class="shop_section layout_padding">
+	<div class="container">
+		<div class="heading_container heading_center">
+			<h2>Diamond</h2>
+		</div>
+		<div class="row">
+			{% for product in diamond %} 
+			{% if forloop.counter < 9 %}			
+			{% include "section/card.html" %}
+			{% endif %}
+			{% endfor %}
+		</div>
+		<div class="btn-box">
+			<a href="{% url 'home:category' category='diamond' %}"> View Diamond Ornaments </a>
+		</div>
+	</div>
+</section>
+{% endif %}
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const carousels = document.querySelectorAll(".carousel");
+		carousels.forEach((carousel) => {
+			const randomInterval = Math.floor(Math.random() * (10000 - 4000 + 1)) + 2000;
+			carousel.setAttribute("data-interval", randomInterval);
+		});
+	});
+</script>
+
+{% endblock body %}

@@ -1,0 +1,13 @@
+python version = 3.12.9
+
+
+FIRST TIME ONLY SETUP
+
+python -m venv .venv
+pip install -r requirements.txt
+
+
+RUN COMMAND
+
+.venv/scripts/activate
+python manage.py runserver

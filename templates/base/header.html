@@ -1,0 +1,106 @@
+{% load static %}
+<!-- header section strats -->
+<header class="header_section">
+	<div class="container-fluid">
+		<nav class="navbar navbar-expand-lg custom_nav-container">
+			<a class="navbar-brand" href="#">
+				<span> <img src="{% static 'images/logoold.png' %}" id="logo" alt="Logo" /> </span>
+				<a href="#">
+					<a href="#" class="gold-prices">
+						<div class="d-flex float-end gold-container">
+							<h4><span>Gold 1GM:</span> ₹{{ gold_1g }}</h4>
+							<h4><span>Gold 8GM:</span> ₹{{ gold_8g }}</h4>
+							<h4><span>Silver 1GM:</span> ₹{{ silver_1g }}</h4>
+						</div>
+					</a>
+				</a>
+			</a>
+			<div class="" id="">
+				<div class="custom_menu-btn">
+					<button onclick="openNav()">
+						<span class="s-1"> </span>
+						<span class="s-2"> </span>
+						<span class="s-3"> </span>
+					</button>
+					<div id="myNav" class="overlay">
+						<div class="overlay-content">
+							<a href="{% url 'home:index' %}">Home</a>
+							<a href="{% url 'home:about' %}">About</a>
+							<a href="{% url 'home:all' %}">All Jewels</a>
+							<a href="#">
+								<div class="dropdown">
+									<span>Platinum</span>
+									<a href="{% url 'home:category'  category='platinum'%}">
+										<div class="dropdown-content">
+											<span>Availables</span>
+											{% for type in available_categories_platinum %}
+											<p>{{ type }}</p>
+											{% endfor %}
+											<span>View</span>
+										</div>
+									</a>
+								</div>
+							</a>
+							<a href="#">
+								<div class="dropdown">
+									<span>Gold</span>
+									<a href="{% url 'home:category'  category='gold'%}">
+										<div class="dropdown-content">
+											<span>Availables</span>
+											{% for type in available_categories_gold %}
+											<p>{{ type }}</p>
+											{% endfor %}
+											<span>View</span>
+										</div>
+									</a>
+								</div>
+							</a>
+							<a href="#">
+								<div class="dropdown">
+									<span>Silver</span>
+									<a href="{% url 'home:category'  category='silver'%}">
+										<div class="dropdown-content">
+											<span>Availables</span>
+											{% for type in available_categories_silver %}
+											<p>{{ type }}</p>
+											{% endfor %}
+											<span>View</span>
+										</div>
+									</a>
+								</div>
+							</a>
+							<a href="#">
+								<div class="dropdown">
+									<span>Diamond</span>
+									<a href="{% url 'home:category'  category='diamond'%}">
+										<div class="dropdown-content">
+											<span>Availables</span>
+											{% for type in available_categories_diamond %}
+											<p>{{ type }}</p>
+											{% endfor %}
+											<span>View</span>
+										</div>
+									</a>
+								</div>
+							</a>
+							<a href="{% url 'home:contact' %}">Contact</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const dropdowns = document.querySelectorAll(".dropdown-toggle");
+
+		dropdowns.forEach((drop) => {
+			drop.addEventListener("click", function () {
+				const content = this.nextElementSibling;
+				content.style.display = content.style.display === "block" ? "none" : "block";
+			});
+		});
+	});
+</script>

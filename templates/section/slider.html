@@ -1,0 +1,28 @@
+{% load static %}
+<!-- slider section -->
+<section class="slider_section position-relative">
+	<div class="slider_bg_box">
+		<img src="{% static 'images/slider-bg.jpg' %}" alt="" />
+	</div>
+	<div class="slider_bg"></div>
+	<div class="container">
+		<div class="col-md-9 col-lg-8">
+			<div class="detail-box">
+				<h1 class="">
+					Best Jewellery
+					<br />
+					Collection
+				</h1>
+				<p>
+					Elegance in Every Sparkle. Handcrafted to Perfection, Designed for Timeless
+					Beauty. Adorn Yourself with Luxury and Grace. Let Every Gem Tell Your Story with
+					Radiance and Sophistication.
+				</p>
+				<div>
+					<a href="{% url 'home:all' %}" class="slider-link"> Shop Now </a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- end slider section -->
