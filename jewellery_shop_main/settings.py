@@ -94,7 +94,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 JAZZMIN_SETTINGS = {
     "site_title": "Admin Panel",
-    "site_header": "Sree Hari Jewellers",
-    "site_brand": "Sree Hari Jewellers",
+    "site_header": "Fox Jewellers Jewellers",
+    "site_brand": "Fox Jewellers Jewellers",
     "show_ui_builder": False,
 }
